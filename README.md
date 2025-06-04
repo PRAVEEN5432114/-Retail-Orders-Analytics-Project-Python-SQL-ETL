@@ -29,14 +29,18 @@ pip install kaggle pandas sqlalchemy pyodbc
 Before using Kaggle CLI or connecting to a database, set the following securely:
 
 # For Kaggle API (kaggle.json key setup)
+
 # Store it at ~/.kaggle/kaggle.json or set manually if using scripts
 
 # For SQL Server (use a config file or environment variables in practice)
+
 import sqlalchemy as sal
 engine = sal.create_engine(
     "mssql+pyodbc://<username>:<password>@<server_name>/<database_name>?driver=ODBC+Driver+17+for+SQL+Server"
 )
 conn = engine.connect()
+
+
 ⚠️ Note: Avoid hardcoding credentials — use .env files or secure storage in production.
 
 🔁 ETL Process in Python
